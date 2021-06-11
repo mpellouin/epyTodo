@@ -12,11 +12,46 @@ epyTodo was one of my favorite subject of the year as I felt working on it would
 
   In order to run epyTodo, you will have to install nodejs, npm and mysql.
   
-Run `sudo apt install nodejs npm -y` in order to install nodejs and npm and follow [this tutorial to install mysql](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
+  ### nodejs and npm
+  
+Run `sudo apt install nodejs npm -y` 
 
-Install the app dependencies by running `npm install`.
+### mysql
 
-Export the .sql file by running `cat epytodo.sql | mysql -u root -p` and start sending requests after lauching the app with `node src/index.js`
+ Follow [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
+
+
+### App dependencies
+
+ Install the app dependencies by running `npm install`.
+
+### .env file
+
+ You will also need to setup a `.env` file in the workspace containing the local configuration variable.
+
+ The .env file should contain:
+
+`PORT`, the port you decided to launch the app on.
+
+`MYSQL_HOST`, the name of your host, probably localhost.
+
+`MYSQL_USER`, usually root but could be any user you created.
+
+`MYSQL_ROOT_PASSWORD`, your user password.
+
+`MYSQL_DATABASE`, the database name, epytodo here.
+
+`SECRET`, a string, usually 32 bytes long used to generate the JWToken.
+
+### Database
+
+ Export the .sql file by running `cat epytodo.sql | mysql -u root -p`
+
+### Start app
+
+ Start sending requests after lauching the app using `node src/index.js`
+
+ Postman or VS Code REST API extension are recommended.
 
 ## Mark
 
@@ -40,3 +75,7 @@ Token: (2/3)
 >The email is stored in the token instead of the id
 
 SQL DB: (5/5)
+
+## State of the project
+
+Although the project was due months ago, I'll probably implement a front-end as a part of personnal training later on.
